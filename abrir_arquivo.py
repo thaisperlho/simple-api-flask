@@ -1,4 +1,9 @@
 # r = ready
 # w = write
-# a = apppend
-file = open(file="./cep.txt", mode="r", encoding="utf-8" )
+# a = append
+file = open(file="./ceps.txt", mode="r", encoding="utf-8")
+
+# função
+
+
+

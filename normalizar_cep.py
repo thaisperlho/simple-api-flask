@@ -1,4 +1,4 @@
-lista_de_ceps = [
+ceps = [
     "06755962",
     828459,
     "9294510",
@@ -13,11 +13,16 @@ lista_de_ceps = [
     172718,
     "05554865",
     "2584884",
+    25876954,
 ]
 
-i = str(i)
-if len(i) < 8:
-    print(f"CEP: \t{(8 - len(i))*'0'}{i}")
-else:
-    print(f"CEP: \t{i}")
-
+for cep in ceps:
+    cep = str(cep)
+    tamanho = len(cep)
+    if tamanho < 8:
+        qtde_faltante_de_zeros = 8 - tamanho
+        cep_corrigido = f"{qtde_faltante_de_zeros * '0'}{cep}"
+        print(cep_corrigido)
+    else:
+        print(cep)
+        
