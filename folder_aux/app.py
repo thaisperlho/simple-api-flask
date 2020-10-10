@@ -37,11 +37,9 @@ def ler_ceps():
     try:
         # remova o "pass" e escreva seu código aqui, após ler, converter os dados para lista.
         # retorne o mesmo usando o "return nome_da_variável_lista"
-        with open(file="./ceps.txt", mode="r", encoding="utf-8") as file:
-            ceps = file.read()
-            lista_ceps = ceps.split(sep="\n")
-            # ceps = file.read().split(sep="\n")
-        return lista_ceps
+        with open(file="./ceps.txt", mode="r", encoding="utf-8") as abacaxi:
+            dados = abacaxi.read().split("\n")
+            return dados
     except Exception as error:
         print(error)
         # caso dê erro eu vou retornar uma lista vazia
@@ -65,21 +63,23 @@ def ler():
 
 
 def adicionar_cep(cep):
-    # Essa função irá receber um cep como parâmetro, irá abrir o arquivo de cep em modo de append.
+    # Essa função irá receber um cep como parâmetro, irá abrir o arquivo de ceps em modo de append.
     # Em seguida vai escrever o cep recebido no final do arquivo.
     # Para isso use a função "open" para abrir o arquivo e a função .write para escrever.
     # Veja o arquivo ler_escrever_adicionar.py dentro da pasta help.
     # Essa função deve retornar um Booleano, caso tenha inserido o cep return True,
     # Caso dê um erro retorne um "False", isso já está implementado.
+
     try:
         # Seu código irá aqui. Apague o "pass" e digite seu código antes do return True.
         # Caso o seu código esteja correto ele irá retornar o True,
         # Caso dê erro irá printar o erro e retornar False.
-        with open(file="./ceps.txt", mode="a", encoding="utf-8") as file:
-            file.write(f"\n{cep}")
+        with open(file="./ceps.txt", mode="a", encoding="utf-8") as abacaxi:
+            abacaxi.write(f"\n{cep}")
         return True
+
     except Exception as error:
-        # irei printar o erro que aconteceu
+        # irei printar o erro que aconteceu.
         print(error)
         # caso entre na exception eu retorno um False
         return False
@@ -103,4 +103,3 @@ def adicionar():
         return f"Desculp o cep: {meu_cep} não pode ser inserido."
 
 
-app.run(debug=True)
